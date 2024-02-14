@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyTaskModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ErrorLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="225" />
+    <Property Name="Message" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Created_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Master_Menus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="225" />
+    <Property Name="Url" Type="nvarchar" MaxLength="225" />
+    <Property Name="IsActive" Type="nvarchar" MaxLength="2" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="Order_no" Type="int" />
+  </EntityType>
+  <EntityType Name="Master_Roles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Role_Name" Type="nvarchar" MaxLength="225" />
+    <Property Name="Role_Desccription" Type="nvarchar" MaxLength="225" />
+    <Property Name="IsActive" Type="nvarchar" MaxLength="2" />
+    <Property Name="Created_by" Type="nvarchar" MaxLength="50" />
+    <Property Name="Created_date" Type="datetime" />
+    <Property Name="Updated_by" Type="nvarchar" MaxLength="50" />
+    <Property Name="Updated_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Master_Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="225" />
+    <Property Name="Password" Type="nvarchar" MaxLength="225" />
+    <Property Name="IsActive" Type="nvarchar" MaxLength="2" />
+    <Property Name="Created_by" Type="nvarchar" MaxLength="50" />
+    <Property Name="Created_date" Type="datetime" />
+    <Property Name="Updated_by" Type="nvarchar" MaxLength="50" />
+    <Property Name="Updated_date" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MenuRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Role_id" Type="int" />
+    <Property Name="Menu_id" Type="int" />
+    <Property Name="IsCreated" Type="nvarchar" MaxLength="2" />
+    <Property Name="IsRead" Type="nvarchar" MaxLength="2" />
+    <Property Name="IsUpdate" Type="nvarchar" MaxLength="2" />
+    <Property Name="IsDelete" Type="nvarchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Role" Type="int" />
+    <Property Name="Id_User" Type="int" />
+    <Property Name="IsActive" Type="nvarchar" MaxLength="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MyTask.dbo.ViewGroupMenu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ViewGroupMenu">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="MenuId" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Role_Name" Type="nvarchar" MaxLength="225" />
+    <Property Name="Role_Desccription" Type="nvarchar" MaxLength="225" />
+    <Property Name="MenuId" Type="int" Nullable="false" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="NavigationName" Type="nvarchar" MaxLength="225" />
+    <Property Name="Url" Type="nvarchar" MaxLength="225" />
+    <Property Name="Order_no" Type="int" />
+    <Property Name="IsCreated" Type="nvarchar" MaxLength="2" />
+    <Property Name="IsRead" Type="nvarchar" MaxLength="2" />
+    <Property Name="IsUpdate" Type="nvarchar" MaxLength="2" />
+    <Property Name="IsDelete" Type="nvarchar" MaxLength="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MyTask.dbo.ViewGroupUser' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ViewGroupUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Role_Name" Type="nvarchar" MaxLength="225" />
+    <Property Name="Role_Desccription" Type="nvarchar" MaxLength="225" />
+    <Property Name="Username" Type="nvarchar" MaxLength="225" />
+    <Property Name="Password" Type="nvarchar" MaxLength="225" />
+  </EntityType>
+  <EntityContainer Name="MyTaskModelStoreContainer">
+    <EntitySet Name="ErrorLog" EntityType="Self.ErrorLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Master_Menus" EntityType="Self.Master_Menus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Master_Roles" EntityType="Self.Master_Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Master_Users" EntityType="Self.Master_Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MenuRole" EntityType="Self.MenuRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ViewGroupMenu" EntityType="Self.ViewGroupMenu" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ViewGroupMenu].[Id] AS [Id], 
+    [ViewGroupMenu].[Role_Name] AS [Role_Name], 
+    [ViewGroupMenu].[Role_Desccription] AS [Role_Desccription], 
+    [ViewGroupMenu].[MenuId] AS [MenuId], 
+    [ViewGroupMenu].[ParentId] AS [ParentId], 
+    [ViewGroupMenu].[NavigationName] AS [NavigationName], 
+    [ViewGroupMenu].[Url] AS [Url], 
+    [ViewGroupMenu].[Order_no] AS [Order_no], 
+    [ViewGroupMenu].[IsCreated] AS [IsCreated], 
+    [ViewGroupMenu].[IsRead] AS [IsRead], 
+    [ViewGroupMenu].[IsUpdate] AS [IsUpdate], 
+    [ViewGroupMenu].[IsDelete] AS [IsDelete]
+    FROM [dbo].[ViewGroupMenu] AS [ViewGroupMenu]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ViewGroupUser" EntityType="Self.ViewGroupUser" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ViewGroupUser].[Id] AS [Id], 
+    [ViewGroupUser].[Role_Name] AS [Role_Name], 
+    [ViewGroupUser].[Role_Desccription] AS [Role_Desccription], 
+    [ViewGroupUser].[Username] AS [Username], 
+    [ViewGroupUser].[Password] AS [Password]
+    FROM [dbo].[ViewGroupUser] AS [ViewGroupUser]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

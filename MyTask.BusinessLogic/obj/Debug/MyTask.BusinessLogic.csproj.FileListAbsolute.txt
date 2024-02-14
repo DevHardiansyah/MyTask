@@ -1,0 +1,15 @@
+C:\Hardi\Hardi\MyTask\MyTask.BusinessLogic\bin\Debug\MyTask.BusinessLogic.dll.config
+C:\Hardi\Hardi\MyTask\MyTask.BusinessLogic\bin\Debug\MyTask.BusinessLogic.dll
+C:\Hardi\Hardi\MyTask\MyTask.BusinessLogic\bin\Debug\MyTask.BusinessLogic.pdb
+C:\Hardi\Hardi\MyTask\MyTask.BusinessLogic\bin\Debug\EntityFramework.dll
+C:\Hardi\Hardi\MyTask\MyTask.BusinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+C:\Hardi\Hardi\MyTask\MyTask.BusinessLogic\bin\Debug\MyTask.Repository.dll
+C:\Hardi\Hardi\MyTask\MyTask.BusinessLogic\bin\Debug\MyTask.Repository.pdb
+C:\Hardi\Hardi\MyTask\MyTask.BusinessLogic\bin\Debug\MyTask.Repository.dll.config
+C:\Hardi\Hardi\MyTask\MyTask.BusinessLogic\bin\Debug\EntityFramework.xml
+C:\Hardi\Hardi\MyTask\MyTask.BusinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+C:\Hardi\Hardi\MyTask\MyTask.BusinessLogic\obj\Debug\MyTask.BusinessLogic.csproj.AssemblyReference.cache
+C:\Hardi\Hardi\MyTask\MyTask.BusinessLogic\obj\Debug\MyTask.BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Hardi\Hardi\MyTask\MyTask.BusinessLogic\obj\Debug\MyTask.BusinessLogic.csproj.CopyComplete
+C:\Hardi\Hardi\MyTask\MyTask.BusinessLogic\obj\Debug\MyTask.BusinessLogic.dll
+C:\Hardi\Hardi\MyTask\MyTask.BusinessLogic\obj\Debug\MyTask.BusinessLogic.pdb

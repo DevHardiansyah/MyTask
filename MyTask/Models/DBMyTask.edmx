@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MyTaskModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ErrorLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="225" />
+          <Property Name="Message" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Created_date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Master_Menus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="225" />
+          <Property Name="Url" Type="nvarchar" MaxLength="225" />
+          <Property Name="IsActive" Type="nvarchar" MaxLength="2" />
+          <Property Name="ParentId" Type="int" />
+          <Property Name="Order_no" Type="int" />
+        </EntityType>
+        <EntityType Name="Master_Roles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Role_Name" Type="nvarchar" MaxLength="225" />
+          <Property Name="Role_Desccription" Type="nvarchar" MaxLength="225" />
+          <Property Name="IsActive" Type="nvarchar" MaxLength="2" />
+          <Property Name="Created_by" Type="nvarchar" MaxLength="50" />
+          <Property Name="Created_date" Type="datetime" />
+          <Property Name="Updated_by" Type="nvarchar" MaxLength="50" />
+          <Property Name="Updated_date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Master_Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="225" />
+          <Property Name="Password" Type="nvarchar" MaxLength="225" />
+          <Property Name="IsActive" Type="nvarchar" MaxLength="2" />
+          <Property Name="Created_by" Type="nvarchar" MaxLength="50" />
+          <Property Name="Created_date" Type="datetime" />
+          <Property Name="Updated_by" Type="nvarchar" MaxLength="50" />
+          <Property Name="Updated_date" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="MenuRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Role_id" Type="int" />
+          <Property Name="Menu_id" Type="int" />
+          <Property Name="IsCreated" Type="nvarchar" MaxLength="2" />
+          <Property Name="IsRead" Type="nvarchar" MaxLength="2" />
+          <Property Name="IsUpdate" Type="nvarchar" MaxLength="2" />
+          <Property Name="IsDelete" Type="nvarchar" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_Role" Type="int" />
+          <Property Name="Id_User" Type="int" />
+          <Property Name="IsActive" Type="nvarchar" MaxLength="2" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MyTask.dbo.ViewGroupMenu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ViewGroupMenu">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="MenuId" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Role_Name" Type="nvarchar" MaxLength="225" />
+          <Property Name="Role_Desccription" Type="nvarchar" MaxLength="225" />
+          <Property Name="MenuId" Type="int" Nullable="false" />
+          <Property Name="ParentId" Type="int" />
+          <Property Name="NavigationName" Type="nvarchar" MaxLength="225" />
+          <Property Name="Url" Type="nvarchar" MaxLength="225" />
+          <Property Name="Order_no" Type="int" />
+          <Property Name="IsCreated" Type="nvarchar" MaxLength="2" />
+          <Property Name="IsRead" Type="nvarchar" MaxLength="2" />
+          <Property Name="IsUpdate" Type="nvarchar" MaxLength="2" />
+          <Property Name="IsDelete" Type="nvarchar" MaxLength="2" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'MyTask.dbo.ViewGroupUser' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ViewGroupUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Role_Name" Type="nvarchar" MaxLength="225" />
+          <Property Name="Role_Desccription" Type="nvarchar" MaxLength="225" />
+          <Property Name="Username" Type="nvarchar" MaxLength="225" />
+          <Property Name="Password" Type="nvarchar" MaxLength="225" />
+        </EntityType>
+        
+        <EntityContainer Name="MyTaskModelStoreContainer">
+          <EntitySet Name="ErrorLog" EntityType="Self.ErrorLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Master_Menus" EntityType="Self.Master_Menus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Master_Roles" EntityType="Self.Master_Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Master_Users" EntityType="Self.Master_Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MenuRole" EntityType="Self.MenuRole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ViewGroupMenu" EntityType="Self.ViewGroupMenu" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ViewGroupMenu].[Id] AS [Id], 
+    [ViewGroupMenu].[Role_Name] AS [Role_Name], 
+    [ViewGroupMenu].[Role_Desccription] AS [Role_Desccription], 
+    [ViewGroupMenu].[MenuId] AS [MenuId], 
+    [ViewGroupMenu].[ParentId] AS [ParentId], 
+    [ViewGroupMenu].[NavigationName] AS [NavigationName], 
+    [ViewGroupMenu].[Url] AS [Url], 
+    [ViewGroupMenu].[Order_no] AS [Order_no], 
+    [ViewGroupMenu].[IsCreated] AS [IsCreated], 
+    [ViewGroupMenu].[IsRead] AS [IsRead], 
+    [ViewGroupMenu].[IsUpdate] AS [IsUpdate], 
+    [ViewGroupMenu].[IsDelete] AS [IsDelete]
+    FROM [dbo].[ViewGroupMenu] AS [ViewGroupMenu]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ViewGroupUser" EntityType="Self.ViewGroupUser" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ViewGroupUser].[Id] AS [Id], 
+    [ViewGroupUser].[Role_Name] AS [Role_Name], 
+    [ViewGroupUser].[Role_Desccription] AS [Role_Desccription], 
+    [ViewGroupUser].[Username] AS [Username], 
+    [ViewGroupUser].[Password] AS [Password]
+    FROM [dbo].[ViewGroupUser] AS [ViewGroupUser]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MyTaskModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ErrorLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Created_date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Master_Menus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="ParentId" Type="Int32" />
+          <Property Name="Order_no" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Master_Roles">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Role_Name" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="Role_Desccription" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="Created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Created_date" Type="DateTime" Precision="3" />
+          <Property Name="Updated_by" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Updated_date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Master_Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="Created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Created_date" Type="DateTime" Precision="3" />
+          <Property Name="Updated_by" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Updated_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MenuRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Role_id" Type="Int32" />
+          <Property Name="Menu_id" Type="Int32" />
+          <Property Name="IsCreated" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="IsRead" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="IsUpdate" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="IsDelete" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_Role" Type="Int32" />
+          <Property Name="Id_User" Type="Int32" />
+          <Property Name="IsActive" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="DBMytaskEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ErrorLogs" EntityType="Self.ErrorLog" />
+          <EntitySet Name="Master_Menus" EntityType="Self.Master_Menus" />
+          <EntitySet Name="Master_Roles" EntityType="Self.Master_Roles" />
+          <EntitySet Name="Master_Users" EntityType="Self.Master_Users" />
+          <EntitySet Name="MenuRoles" EntityType="Self.MenuRole" />
+          <EntitySet Name="UserRoles" EntityType="Self.UserRole" />
+          <EntitySet Name="ViewGroupUsers" EntityType="MyTaskModel.ViewGroupUser" />
+          <EntitySet Name="ViewGroupMenus" EntityType="MyTaskModel.ViewGroupMenu" />
+        </EntityContainer>
+        <EntityType Name="ViewGroupUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Role_Name" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="Role_Desccription" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="Username" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ViewGroupMenu">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="MenuId" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Role_Name" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="Role_Desccription" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="MenuId" Type="Int32" Nullable="false" />
+          <Property Name="ParentId" Type="Int32" />
+          <Property Name="NavigationName" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="Url" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+          <Property Name="Order_no" Type="Int32" />
+          <Property Name="IsCreated" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="IsRead" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="IsUpdate" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="IsDelete" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MyTaskModelStoreContainer" CdmEntityContainer="DBMytaskEntities">
+          <EntitySetMapping Name="ErrorLogs">
+            <EntityTypeMapping TypeName="MyTaskModel.ErrorLog">
+              <MappingFragment StoreEntitySet="ErrorLog">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Created_date" ColumnName="Created_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_Menus">
+            <EntityTypeMapping TypeName="MyTaskModel.Master_Menus">
+              <MappingFragment StoreEntitySet="Master_Menus">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Order_no" ColumnName="Order_no" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_Roles">
+            <EntityTypeMapping TypeName="MyTaskModel.Master_Roles">
+              <MappingFragment StoreEntitySet="Master_Roles">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Role_Name" ColumnName="Role_Name" />
+                <ScalarProperty Name="Role_Desccription" ColumnName="Role_Desccription" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Created_by" ColumnName="Created_by" />
+                <ScalarProperty Name="Created_date" ColumnName="Created_date" />
+                <ScalarProperty Name="Updated_by" ColumnName="Updated_by" />
+                <ScalarProperty Name="Updated_date" ColumnName="Updated_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_Users">
+            <EntityTypeMapping TypeName="MyTaskModel.Master_Users">
+              <MappingFragment StoreEntitySet="Master_Users">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="Created_by" ColumnName="Created_by" />
+                <ScalarProperty Name="Created_date" ColumnName="Created_date" />
+                <ScalarProperty Name="Updated_by" ColumnName="Updated_by" />
+                <ScalarProperty Name="Updated_date" ColumnName="Updated_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MenuRoles">
+            <EntityTypeMapping TypeName="MyTaskModel.MenuRole">
+              <MappingFragment StoreEntitySet="MenuRole">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Role_id" ColumnName="Role_id" />
+                <ScalarProperty Name="Menu_id" ColumnName="Menu_id" />
+                <ScalarProperty Name="IsCreated" ColumnName="IsCreated" />
+                <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+                <ScalarProperty Name="IsUpdate" ColumnName="IsUpdate" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRoles">
+            <EntityTypeMapping TypeName="MyTaskModel.UserRole">
+              <MappingFragment StoreEntitySet="UserRole">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Id_Role" ColumnName="Id_Role" />
+                <ScalarProperty Name="Id_User" ColumnName="Id_User" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewGroupUsers">
+            <EntityTypeMapping TypeName="MyTaskModel.ViewGroupUser">
+              <MappingFragment StoreEntitySet="ViewGroupUser">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Role_Desccription" ColumnName="Role_Desccription" />
+                <ScalarProperty Name="Role_Name" ColumnName="Role_Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewGroupMenus">
+            <EntityTypeMapping TypeName="MyTaskModel.ViewGroupMenu">
+              <MappingFragment StoreEntitySet="ViewGroupMenu">
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="IsUpdate" ColumnName="IsUpdate" />
+                <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+                <ScalarProperty Name="IsCreated" ColumnName="IsCreated" />
+                <ScalarProperty Name="Order_no" ColumnName="Order_no" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="NavigationName" ColumnName="NavigationName" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+                <ScalarProperty Name="Role_Desccription" ColumnName="Role_Desccription" />
+                <ScalarProperty Name="Role_Name" ColumnName="Role_Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

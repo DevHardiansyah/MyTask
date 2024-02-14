@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MyTaskModelStoreContainer" CdmEntityContainer="MyTaskEntities">
+    <EntitySetMapping Name="Detail_Users">
+      <EntityTypeMapping TypeName="MyTaskModel.Detail_Users">
+        <MappingFragment StoreEntitySet="Detail_Users">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ErrorLogs">
+      <EntityTypeMapping TypeName="MyTaskModel.ErrorLog">
+        <MappingFragment StoreEntitySet="ErrorLog">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Created_date" ColumnName="Created_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Master_CategoryProject">
+      <EntityTypeMapping TypeName="MyTaskModel.Master_CategoryProject">
+        <MappingFragment StoreEntitySet="Master_CategoryProject">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Category_Name" ColumnName="Category_Name" />
+          <ScalarProperty Name="Category_Description" ColumnName="Category_Description" />
+          <ScalarProperty Name="Created_by" ColumnName="Created_by" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Master_Menus">
+      <EntityTypeMapping TypeName="MyTaskModel.Master_Menus">
+        <MappingFragment StoreEntitySet="Master_Menus">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="Order_no" ColumnName="Order_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Master_Roles">
+      <EntityTypeMapping TypeName="MyTaskModel.Master_Roles">
+        <MappingFragment StoreEntitySet="Master_Roles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Role_Name" ColumnName="Role_Name" />
+          <ScalarProperty Name="Role_Desccription" ColumnName="Role_Desccription" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Created_by" ColumnName="Created_by" />
+          <ScalarProperty Name="Created_date" ColumnName="Created_date" />
+          <ScalarProperty Name="Updated_by" ColumnName="Updated_by" />
+          <ScalarProperty Name="Updated_date" ColumnName="Updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Master_Status">
+      <EntityTypeMapping TypeName="MyTaskModel.Master_Status">
+        <MappingFragment StoreEntitySet="Master_Status">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Master_Users">
+      <EntityTypeMapping TypeName="MyTaskModel.Master_Users">
+        <MappingFragment StoreEntitySet="Master_Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Created_by" ColumnName="Created_by" />
+          <ScalarProperty Name="Created_date" ColumnName="Created_date" />
+          <ScalarProperty Name="Updated_by" ColumnName="Updated_by" />
+          <ScalarProperty Name="Updated_date" ColumnName="Updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MenuRoles">
+      <EntityTypeMapping TypeName="MyTaskModel.MenuRole">
+        <MappingFragment StoreEntitySet="MenuRole">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Role_id" ColumnName="Role_id" />
+          <ScalarProperty Name="Menu_id" ColumnName="Menu_id" />
+          <ScalarProperty Name="IsCreated" ColumnName="IsCreated" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="IsUpdate" ColumnName="IsUpdate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projects">
+      <EntityTypeMapping TypeName="MyTaskModel.Project">
+        <MappingFragment StoreEntitySet="Project">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+          <ScalarProperty Name="CategoryProject_Id" ColumnName="CategoryProject_Id" />
+          <ScalarProperty Name="ProjectDescription" ColumnName="ProjectDescription" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Created_Date" ColumnName="Created_Date" />
+          <ScalarProperty Name="Created_By" ColumnName="Created_By" />
+          <ScalarProperty Name="Updated_Date" ColumnName="Updated_Date" />
+          <ScalarProperty Name="Updated_By" ColumnName="Updated_By" />
+          <ScalarProperty Name="ProjectStart" ColumnName="ProjectStart" />
+          <ScalarProperty Name="ProjectFinish" ColumnName="ProjectFinish" />
+          <ScalarProperty Name="ProjectLogo" ColumnName="ProjectLogo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="MyTaskModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRoles">
+      <EntityTypeMapping TypeName="MyTaskModel.UserRole">
+        <MappingFragment StoreEntitySet="UserRole">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Id_Role" ColumnName="Id_Role" />
+          <ScalarProperty Name="Id_User" ColumnName="Id_User" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewGroupMenus">
+      <EntityTypeMapping TypeName="MyTaskModel.ViewGroupMenu">
+        <MappingFragment StoreEntitySet="ViewGroupMenu">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Role_Name" ColumnName="Role_Name" />
+          <ScalarProperty Name="Role_Desccription" ColumnName="Role_Desccription" />
+          <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="NavigationName" ColumnName="NavigationName" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Order_no" ColumnName="Order_no" />
+          <ScalarProperty Name="IsCreated" ColumnName="IsCreated" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="IsUpdate" ColumnName="IsUpdate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewGroupUsers">
+      <EntityTypeMapping TypeName="MyTaskModel.ViewGroupUser">
+        <MappingFragment StoreEntitySet="ViewGroupUser">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Role_Name" ColumnName="Role_Name" />
+          <ScalarProperty Name="Role_Desccription" ColumnName="Role_Desccription" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionName="MyTaskModel.Store.fnGetuserbyUsername" FunctionImportName="fnGetuserbyUsername">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="MyTaskModel.fnGetuserbyUsername_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Created_by" ColumnName="Created_by" />
+          <ScalarProperty Name="Created_date" ColumnName="Created_date" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spSendEmail" FunctionName="MyTaskModel.Store.spSendEmail" />
+  </EntityContainerMapping>
+</Mapping>

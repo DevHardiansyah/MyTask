@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fde6512003cc49bb9a33497e74dde46f" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="MyTaskModel.ErrorLog" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyTaskModel.Master_Menus" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyTaskModel.Master_Roles" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyTaskModel.Master_Users" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyTaskModel.MenuRole" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyTaskModel.UserRole" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MyTaskModel.ViewGroupUser" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MyTaskModel.ViewGroupMenu" Width="1.5" PointX="0.75" PointY="7.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

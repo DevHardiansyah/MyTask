@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyTaskModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Detail_Users">
+    <Key>
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+    <Property Name="Avatar" Type="nvarchar(max)" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Postcode" Type="nvarchar" MaxLength="20" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="Province" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ErrorLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar" MaxLength="225" />
+    <Property Name="Message" Type="nvarchar(max)" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Created_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Master_CategoryProject">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category_Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Category_Description" Type="nvarchar(max)" />
+    <Property Name="Created_by" Type="nvarchar" MaxLength="50" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="IsActive" Type="nvarchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="Master_Menus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="225" />
+    <Property Name="Url" Type="nvarchar" MaxLength="225" />
+    <Property Name="IsActive" Type="nvarchar" MaxLength="2" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="Order_no" Type="int" />
+  </EntityType>
+  <EntityType Name="Master_Roles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Role_Name" Type="nvarchar" MaxLength="225" />
+    <Property Name="Role_Desccription" Type="nvarchar" MaxLength="225" />
+    <Property Name="IsActive" Type="nvarchar" MaxLength="2" />
+    <Property Name="Created_by" Type="nvarchar" MaxLength="50" />
+    <Property Name="Created_date" Type="datetime" />
+    <Property Name="Updated_by" Type="nvarchar" MaxLength="50" />
+    <Property Name="Updated_date" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Master_Status">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Master_Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="225" />
+    <Property Name="Password" Type="nvarchar" MaxLength="225" />
+    <Property Name="IsActive" Type="nvarchar" MaxLength="2" />
+    <Property Name="Created_by" Type="nvarchar" MaxLength="50" />
+    <Property Name="Created_date" Type="datetime" />
+    <Property Name="Updated_by" Type="nvarchar" MaxLength="50" />
+    <Property Name="Updated_date" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MenuRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Role_id" Type="int" />
+    <Property Name="Menu_id" Type="int" />
+    <Property Name="IsCreated" Type="nvarchar" MaxLength="2" />
+    <Property Name="IsRead" Type="nvarchar" MaxLength="2" />
+    <Property Name="IsUpdate" Type="nvarchar" MaxLength="2" />
+    <Property Name="IsDelete" Type="nvarchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CategoryProject_Id" Type="int" />
+    <Property Name="ProjectDescription" Type="nvarchar(max)" />
+    <Property Name="IsActive" Type="nvarchar" MaxLength="2" />
+    <Property Name="Created_Date" Type="datetime" />
+    <Property Name="Created_By" Type="nvarchar" MaxLength="50" />
+    <Property Name="Updated_Date" Type="datetime" />
+    <Property Name="Updated_By" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProjectStart" Type="datetime" />
+    <Property Name="ProjectFinish" Type="datetime" />
+    <Property Name="ProjectLogo" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Role" Type="int" />
+    <Property Name="Id_User" Type="int" />
+    <Property Name="IsActive" Type="nvarchar" MaxLength="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MyTask.dbo.ViewGroupMenu' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ViewGroupMenu">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="MenuId" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Role_Name" Type="nvarchar" MaxLength="225" />
+    <Property Name="Role_Desccription" Type="nvarchar" MaxLength="225" />
+    <Property Name="MenuId" Type="int" Nullable="false" />
+    <Property Name="ParentId" Type="int" />
+    <Property Name="NavigationName" Type="nvarchar" MaxLength="225" />
+    <Property Name="Url" Type="nvarchar" MaxLength="225" />
+    <Property Name="Order_no" Type="int" />
+    <Property Name="IsCreated" Type="nvarchar" MaxLength="2" />
+    <Property Name="IsRead" Type="nvarchar" MaxLength="2" />
+    <Property Name="IsUpdate" Type="nvarchar" MaxLength="2" />
+    <Property Name="IsDelete" Type="nvarchar" MaxLength="2" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MyTask.dbo.ViewGroupUser' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ViewGroupUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Role_Name" Type="nvarchar" MaxLength="225" />
+    <Property Name="Role_Desccription" Type="nvarchar" MaxLength="225" />
+    <Property Name="Username" Type="nvarchar" MaxLength="225" />
+    <Property Name="Password" Type="nvarchar" MaxLength="225" />
+  </EntityType>
+  <Function Name="fnGetuserbyUsername" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Username" Type="nvarchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+          <Property Name="Avatar" Type="nvarchar(max)" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="Postcode" Type="nvarchar" MaxLength="20" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="Province" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="nvarchar" MaxLength="2" />
+          <Property Name="Created_by" Type="nvarchar" MaxLength="50" />
+          <Property Name="Created_date" Type="datetime" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="spSendEmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="MyTaskModelStoreContainer">
+    <EntitySet Name="Detail_Users" EntityType="Self.Detail_Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ErrorLog" EntityType="Self.ErrorLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Master_CategoryProject" EntityType="Self.Master_CategoryProject" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Master_Menus" EntityType="Self.Master_Menus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Master_Roles" EntityType="Self.Master_Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Master_Status" EntityType="Self.Master_Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Master_Users" EntityType="Self.Master_Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MenuRole" EntityType="Self.MenuRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Project" EntityType="Self.Project" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ViewGroupMenu" EntityType="Self.ViewGroupMenu" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ViewGroupMenu].[Id] AS [Id], 
+    [ViewGroupMenu].[Role_Name] AS [Role_Name], 
+    [ViewGroupMenu].[Role_Desccription] AS [Role_Desccription], 
+    [ViewGroupMenu].[MenuId] AS [MenuId], 
+    [ViewGroupMenu].[ParentId] AS [ParentId], 
+    [ViewGroupMenu].[NavigationName] AS [NavigationName], 
+    [ViewGroupMenu].[Url] AS [Url], 
+    [ViewGroupMenu].[Order_no] AS [Order_no], 
+    [ViewGroupMenu].[IsCreated] AS [IsCreated], 
+    [ViewGroupMenu].[IsRead] AS [IsRead], 
+    [ViewGroupMenu].[IsUpdate] AS [IsUpdate], 
+    [ViewGroupMenu].[IsDelete] AS [IsDelete]
+    FROM [dbo].[ViewGroupMenu] AS [ViewGroupMenu]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ViewGroupUser" EntityType="Self.ViewGroupUser" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ViewGroupUser].[Id] AS [Id], 
+    [ViewGroupUser].[Role_Name] AS [Role_Name], 
+    [ViewGroupUser].[Role_Desccription] AS [Role_Desccription], 
+    [ViewGroupUser].[Username] AS [Username], 
+    [ViewGroupUser].[Password] AS [Password]
+    FROM [dbo].[ViewGroupUser] AS [ViewGroupUser]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

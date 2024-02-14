@@ -1,0 +1,12 @@
+C:\Hardi\Hardi\MyTask\MyTask.Repository\bin\Debug\MyTask.Repository.dll.config
+C:\Hardi\Hardi\MyTask\MyTask.Repository\bin\Debug\MyTask.Repository.dll
+C:\Hardi\Hardi\MyTask\MyTask.Repository\bin\Debug\MyTask.Repository.pdb
+C:\Hardi\Hardi\MyTask\MyTask.Repository\bin\Debug\EntityFramework.dll
+C:\Hardi\Hardi\MyTask\MyTask.Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Hardi\Hardi\MyTask\MyTask.Repository\bin\Debug\EntityFramework.xml
+C:\Hardi\Hardi\MyTask\MyTask.Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Hardi\Hardi\MyTask\MyTask.Repository\obj\Debug\MyTask.Repository.csproj.AssemblyReference.cache
+C:\Hardi\Hardi\MyTask\MyTask.Repository\obj\Debug\MyTask.Repository.csproj.CoreCompileInputs.cache
+C:\Hardi\Hardi\MyTask\MyTask.Repository\obj\Debug\MyTask.Repository.csproj.CopyComplete
+C:\Hardi\Hardi\MyTask\MyTask.Repository\obj\Debug\MyTask.Repository.dll
+C:\Hardi\Hardi\MyTask\MyTask.Repository\obj\Debug\MyTask.Repository.pdb

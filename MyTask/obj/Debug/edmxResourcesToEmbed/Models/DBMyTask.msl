@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MyTaskModelStoreContainer" CdmEntityContainer="DBMytaskEntities">
+    <EntitySetMapping Name="ErrorLogs">
+      <EntityTypeMapping TypeName="MyTaskModel.ErrorLog">
+        <MappingFragment StoreEntitySet="ErrorLog">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Created_date" ColumnName="Created_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Master_Menus">
+      <EntityTypeMapping TypeName="MyTaskModel.Master_Menus">
+        <MappingFragment StoreEntitySet="Master_Menus">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="Order_no" ColumnName="Order_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Master_Roles">
+      <EntityTypeMapping TypeName="MyTaskModel.Master_Roles">
+        <MappingFragment StoreEntitySet="Master_Roles">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Role_Name" ColumnName="Role_Name" />
+          <ScalarProperty Name="Role_Desccription" ColumnName="Role_Desccription" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Created_by" ColumnName="Created_by" />
+          <ScalarProperty Name="Created_date" ColumnName="Created_date" />
+          <ScalarProperty Name="Updated_by" ColumnName="Updated_by" />
+          <ScalarProperty Name="Updated_date" ColumnName="Updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Master_Users">
+      <EntityTypeMapping TypeName="MyTaskModel.Master_Users">
+        <MappingFragment StoreEntitySet="Master_Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Created_by" ColumnName="Created_by" />
+          <ScalarProperty Name="Created_date" ColumnName="Created_date" />
+          <ScalarProperty Name="Updated_by" ColumnName="Updated_by" />
+          <ScalarProperty Name="Updated_date" ColumnName="Updated_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MenuRoles">
+      <EntityTypeMapping TypeName="MyTaskModel.MenuRole">
+        <MappingFragment StoreEntitySet="MenuRole">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Role_id" ColumnName="Role_id" />
+          <ScalarProperty Name="Menu_id" ColumnName="Menu_id" />
+          <ScalarProperty Name="IsCreated" ColumnName="IsCreated" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="IsUpdate" ColumnName="IsUpdate" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserRoles">
+      <EntityTypeMapping TypeName="MyTaskModel.UserRole">
+        <MappingFragment StoreEntitySet="UserRole">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Id_Role" ColumnName="Id_Role" />
+          <ScalarProperty Name="Id_User" ColumnName="Id_User" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewGroupUsers">
+      <EntityTypeMapping TypeName="MyTaskModel.ViewGroupUser">
+        <MappingFragment StoreEntitySet="ViewGroupUser">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Role_Desccription" ColumnName="Role_Desccription" />
+          <ScalarProperty Name="Role_Name" ColumnName="Role_Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewGroupMenus">
+      <EntityTypeMapping TypeName="MyTaskModel.ViewGroupMenu">
+        <MappingFragment StoreEntitySet="ViewGroupMenu">
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="IsUpdate" ColumnName="IsUpdate" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="IsCreated" ColumnName="IsCreated" />
+          <ScalarProperty Name="Order_no" ColumnName="Order_no" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="NavigationName" ColumnName="NavigationName" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+          <ScalarProperty Name="Role_Desccription" ColumnName="Role_Desccription" />
+          <ScalarProperty Name="Role_Name" ColumnName="Role_Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

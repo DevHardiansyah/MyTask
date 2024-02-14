@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyTaskModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ErrorLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Created_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Master_Menus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+    <Property Name="Url" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="ParentId" Type="Int32" />
+    <Property Name="Order_no" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Master_Roles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Role_Name" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+    <Property Name="Role_Desccription" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="Created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Created_date" Type="DateTime" Precision="3" />
+    <Property Name="Updated_by" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Updated_date" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Master_Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="Created_by" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Created_date" Type="DateTime" Precision="3" />
+    <Property Name="Updated_by" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Updated_date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="MenuRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Role_id" Type="Int32" />
+    <Property Name="Menu_id" Type="Int32" />
+    <Property Name="IsCreated" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="IsRead" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="IsUpdate" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="IsDelete" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Role" Type="Int32" />
+    <Property Name="Id_User" Type="Int32" />
+    <Property Name="IsActive" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="DBMytaskEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ErrorLogs" EntityType="Self.ErrorLog" />
+    <EntitySet Name="Master_Menus" EntityType="Self.Master_Menus" />
+    <EntitySet Name="Master_Roles" EntityType="Self.Master_Roles" />
+    <EntitySet Name="Master_Users" EntityType="Self.Master_Users" />
+    <EntitySet Name="MenuRoles" EntityType="Self.MenuRole" />
+    <EntitySet Name="UserRoles" EntityType="Self.UserRole" />
+    <EntitySet Name="ViewGroupUsers" EntityType="MyTaskModel.ViewGroupUser" />
+    <EntitySet Name="ViewGroupMenus" EntityType="MyTaskModel.ViewGroupMenu" />
+  </EntityContainer>
+  <EntityType Name="ViewGroupUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Role_Name" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+    <Property Name="Role_Desccription" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+    <Property Name="Username" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ViewGroupMenu">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="MenuId" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Role_Name" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+    <Property Name="Role_Desccription" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+    <Property Name="MenuId" Type="Int32" Nullable="false" />
+    <Property Name="ParentId" Type="Int32" />
+    <Property Name="NavigationName" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+    <Property Name="Url" Type="String" MaxLength="225" FixedLength="false" Unicode="true" />
+    <Property Name="Order_no" Type="Int32" />
+    <Property Name="IsCreated" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="IsRead" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="IsUpdate" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="IsDelete" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>
